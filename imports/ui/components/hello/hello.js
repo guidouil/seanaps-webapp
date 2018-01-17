@@ -14,7 +14,7 @@ Template.hello.helpers({
 Template.hello.events({
   'click .syncNow'(event, instance) {
     if (!navigator.nfc) {
-      alert('No NFC Support');
+      instance.logs.set('No NFC Support');
       return false;
     }
     navigator.nfc.watch(function (message) {
